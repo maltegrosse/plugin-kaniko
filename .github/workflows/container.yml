@@ -26,15 +26,7 @@ jobs:
           echo ::set-output name=docker_image::${DOCKER_IMAGE}
       - name: Get the version
         id: get_version
-        run: echo ::set-output name=version::${GITHUB_REF/refs\/tags\//}     
-      - name: Set up QEMU
-        uses: docker/setup-qemu-action@master
-        with:
-          platforms: linux/amd64
-
-      - name: Set up Docker Buildx
-        id: buildx
-        uses: docker/setup-buildx-action@master
+        run: echo ::set-output name=version::${GITHUB_REF/refs\/tags\//}    
 
       - name: Login to DockerHub
         if: github.event_name != 'pull_request'
