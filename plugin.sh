@@ -141,7 +141,7 @@ fi
 # Double quotes can't be used, otherwise kaniko takes all arguments as one.
 # With bash, an array could have been used to avoid disabling this check.
 # shellcheck disable=SC2086
-echo "$BUILD_ARGS_FROM_ENV"
+echo "$EXTRA_OPTS"
 /kaniko/executor -v "${LOG}" \
     --context="${CONTEXT}" \
     --dockerfile="${DOCKERFILE}" \
